@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  db: 
+    container_name: postgresql-container
+    image: postgres:15.6-alpine
+    restart: always
+    ports: 
+      - "54321:5432"
+    environment: 
+      POSTGRES_USER: sa
+      POSTGRES_PASSWORD: "@Postgresql15"
+      POSTGRES_DB: tasks_db
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
